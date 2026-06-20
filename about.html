@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Sony Enterprises, Ponnur</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    .about-hero {
+      padding-top: calc(var(--nav-h) + 80px);
+      padding-bottom: 80px;
+      padding-left: 64px;
+      padding-right: 64px;
+      background: var(--bg-void);
+      position: relative;
+      overflow: hidden;
+    }
+    .about-hero::before {
+      content: 'ABOUT';
+      position: absolute;
+      font-family: var(--font-display);
+      font-size: 16rem;
+      color: rgba(245,166,35,0.03);
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      letter-spacing: 0.1em;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    .about-hero-inner {
+      max-width: 760px;
+    }
+    .about-story {
+      background: var(--bg-deep);
+      padding: 80px 64px;
+    }
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .story-image {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 4px;
+      filter: brightness(0.9) contrast(1.05);
+    }
+    .story-text p {
+      font-size: 0.95rem;
+      color: var(--white-muted);
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+    .products-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 32px 0;
+    }
+    .prod-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--white);
+      padding: 10px 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 2px;
+      transition: border-color 0.3s;
+    }
+    .prod-item:hover { border-color: var(--amber); }
+    .prod-item::before {
+      content: '◆';
+      color: var(--amber);
+      font-size: 0.5rem;
+      flex-shrink: 0;
+    }
+    .slider-section {
+      background: var(--bg-void);
+      padding: 80px 64px;
+    }
+    .slider-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      border: 1px solid var(--border-subtle);
+    }
+    .slider-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .slide {
+      min-width: 100%;
+      aspect-ratio: 16/7;
+    }
+    .slide img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: brightness(0.9) saturate(0.85);
+    }
+    .slider-controls {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .slider-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--white-dim);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      padding: 0;
+    }
+    .slider-dot.active {
+      background: var(--amber);
+      width: 24px;
+      border-radius: 4px;
+    }
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(7,7,9,0.7);
+      border: 1px solid var(--border);
+      color: var(--white);
+      width: 44px; height: 44px;
+      border-radius: 2px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      z-index: 2;
+    }
+    .slider-arrow:hover { background: var(--amber); color: var(--bg-void); border-color: var(--amber); }
+    .slider-arrow.prev { left: 16px; }
+    .slider-arrow.next { right: 16px; }
+    @media (max-width: 768px) {
+      .about-hero { padding: calc(var(--nav-h) + 48px) 24px 48px; }
+      .about-story { padding: 60px 24px; }
+      .story-grid { grid-template-columns: 1fr; gap: 40px; }
+      .products-list { grid-template-columns: 1fr; }
+      .slider-section { padding: 60px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-logo">
+    <span class="nav-logo-main">SONY</span>
+    <span class="nav-logo-sub">Enterprises · Trusted by 25+ clients. Built with quality, delivered with trust. by 25+ clients. Built with quality, delivered with trust.</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#products">Products</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="index.html#gallery">Gallery</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="index.html#products">Products</a>
+  <a href="about.html" class="active">About</a>
+  <a href="index.html#gallery">Gallery</a>
+  <a href="index.html#contact">Contact Us</a>
+</div>
+
+<!-- ABOUT HERO -->
+<div class="about-hero">
+  <div class="about-hero-inner">
+    <div class="section-label">Our Story</div>
+    <h1 class="hero-title" style="font-size:clamp(3rem,7vw,6rem); opacity:1; transform:none; animation:none">
+      SONY<br><span>ENTERPRISES</span>
+    </h1>
+    <p class="hero-desc" style="opacity:1; transform:none; animation:none; margin-top:16px">
+      Ponnur's most Trusted by 25+ clients. Built with quality, delivered with trust. by 25+ clients. Built with quality, delivered with trust. electrical and electronics shop. Serving families, homes, offices, and shops across Guntur District for more than 25 years.
+    </p>
+  </div>
+</div>
+
+<!-- STORY SECTION -->
+<div class="about-story">
+  <div class="story-grid">
+    <div class="reveal">
+      <img src="assets/images/owner.png" alt="Sony Enterprises Owner" class="story-image">
+    </div>
+    <div class="story-text reveal">
+      <div class="section-label">The Journey</div>
+      <h2 class="section-title" style="margin-bottom:24px">BUILT ON<br>TRUST</h2>
+      <p>Welcome to Sony Enterprises — a Trusted by 25+ clients. Built with quality, delivered with trust. name in home electricals and electronics, proudly serving the people of Ponnur for more than 25 years.</p>
+      <p>Located on SPP Road near Subbaraye Picture Palace in Ponnur, Guntur District, we are committed to providing quality electrical and electronic products at affordable prices with reliable customer service.</p>
+      <p>Whether you are building a new home, upgrading your electrical fittings, or looking for daily-use electronic products, Sony Enterprises is your one-stop destination for quality and dependable service.</p>
+      <p>For over two decades, we have built strong trust with customers through genuine products, fair pricing, and friendly service.</p>
+
+      <h3 style="font-family:var(--font-display); font-size:1.2rem; letter-spacing:0.1em; color:var(--amber); margin:28px 0 16px">WHAT WE STOCK</h3>
+      <div class="products-list">
+        <div class="prod-item">Ceiling Fans</div>
+        <div class="prod-item">Electrical Cables & Wires</div>
+        <div class="prod-item">Switch Boards & Switches</div>
+        <div class="prod-item">LED Bulbs & Tube Lights</div>
+        <div class="prod-item">Decorative & Home Lighting</div>
+        <div class="prod-item">Extension Boxes & Plugs</div>
+        <div class="prod-item">Regulators & Holders</div>
+        <div class="prod-item">MCBs & Safety Devices</div>
+        <div class="prod-item">Chargers & Accessories</div>
+        <div class="prod-item">Inverters & Power Products</div>
+        <div class="prod-item">Home Appliance Parts</div>
+        <div class="prod-item">PVC Pipes & Fittings</div>
+      </div>
+
+      <a href="index.html#contact" class="btn-primary"><span>Visit Our Shop →</span></a>
+    </div>
+  </div>
+</div>
+
+<!-- IMAGE SLIDER -->
+<div class="slider-section">
+  <div class="section-label">Photo Gallery</div>
+  <h2 class="section-title reveal" style="margin-bottom:40px">INSIDE THE STORE</h2>
+
+  <div class="slider-wrap reveal">
+    <div class="slider-track" id="sliderTrack">
+      <div class="slide"><img src="assets/images/BEARINGS.webp" alt="Store Gallery 1" loading="lazy"></div>
+      <div class="slide"><img src="assets/images/CEELING LIGHRS.webp" alt="Store Gallery 2" loading="lazy"></div>
+      <div class="slide"><img src="assets/images/CEELINGFANS.jpg" alt="Store Gallery 3" loading="lazy"></div>
+      <div class="slide"><img src="assets/images/CELLING LIGHT.jpg" alt="Store Gallery 4" loading="lazy"></div>
+      <div class="slide"><img src="assets/images/HOME LIGHTINGS FUNCTION.webp" alt="Store Gallery 5" loading="lazy"></div>
+    </div>
+    <button class="slider-arrow prev" id="sliderPrev">‹</button>
+    <button class="slider-arrow next" id="sliderNext">›</button>
+  </div>
+  <div class="slider-controls" id="sliderDots"></div>
+</div>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="nav-logo-main">SONY</span>
+      <span class="nav-logo-sub">Enterprises · Trusted by 25+ clients. Built with quality, delivered with trust. by 25+ clients. Built with quality, delivered with trust.</span>
+      <p>Ponnur's Trusted by 25+ clients. Built with quality, delivered with trust. electrical and electronics shop for over 25 years. Genuine products, expert advice, and friendly service — always.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#products">Products</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Visit Us</h4>
+      <ul>
+        <li>SPP Road, Ponnur</li>
+        <li>Near Subbaraye Picture Palace</li>
+        <li>Guntur District, AP – 522124</li>
+        <li><a href="tel:+919059380340">+91 90593 80340</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 <span>Sony Enterprises</span>, Ponnur. All rights reserved.</p>
+    <p>Made with ❤️ for Ponnur's finest electrical store</p>
+  </div>
+</footer>
+
+<button class="scroll-top">↑</button>
+
+<script src="js/script.js"></script>
+<script>
+  // Slider logic
+  let current = 0;
+  const slides = document.querySelectorAll('.slide');
+  const track = document.getElementById('sliderTrack');
+  const dotsContainer = document.getElementById('sliderDots');
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  const goTo = (idx) => {
+    current = (idx + slides.length) % slides.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    document.querySelectorAll('.slider-dot').forEach((d,i) => {
+      d.classList.toggle('active', i === current);
+    });
+  };
+
+  document.getElementById('sliderPrev').addEventListener('click', () => goTo(current - 1));
+  document.getElementById('sliderNext').addEventListener('click', () => goTo(current + 1));
+  setInterval(() => goTo(current + 1), 4000);
+</script>
+</body>
+</html>
